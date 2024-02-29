@@ -1,8 +1,10 @@
 import React, { useState, createContext, useContext } from 'react';
 
-export const AvailablePointsContext = createContext();
-export const AvailablePointsProvider = ({ children }) => {
-  const [availablePoints, setAvailablePoints] = useState(6);
+const MAX_AVAILABLE_POINTS = 6;
+const AvailablePointsContext = createContext();
+
+const AvailablePointsProvider = ({ children }) => {
+  const [availablePoints, setAvailablePoints] = useState(MAX_AVAILABLE_POINTS);
 
   const addPoint = () => setAvailablePoints((prev) => prev + 1);
   const removePoint = () => setAvailablePoints((prev) => prev - 1);
@@ -14,4 +16,6 @@ export const AvailablePointsProvider = ({ children }) => {
   );
 };
 
-export const useAvailablePoints = () => useContext(AvailablePointsContext);
+const useAvailablePoints = () => useContext(AvailablePointsContext);
+
+export { MAX_AVAILABLE_POINTS, AvailablePointsProvider, useAvailablePoints };
