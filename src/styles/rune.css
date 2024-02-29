@@ -3,6 +3,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
   cursor: grab;
+}
+
+.rune {
+  object-fit: cover;
 }

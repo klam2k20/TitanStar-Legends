@@ -9,8 +9,8 @@ const TalentPath = ({ id }) => {
   const path = id === 1 ? TALENT_PATH_1 : TALENT_PATH_2;
 
   const updatedRunesLearned = (idx, isLearned) => {
-    setRunesLearned((prev) => {
-      const updatedRunes = [...prev];
+    setRunesLearned(() => {
+      const updatedRunes = [...runesLearned];
       updatedRunes[idx] = isLearned;
       return updatedRunes;
     });
@@ -21,10 +21,12 @@ const TalentPath = ({ id }) => {
       {runesLearned.map((isLearned, i) => (
         <Rune
           key={i}
+          id={i}
           icon={isLearned ? path[i][0] : path[i][1]}
           isLearned={isLearned}
           isPrevRuneLearned={!i ? true : runesLearned[i - 1]}
           isNextRuneLearned={i === runesLearned.length - 1 ? false : runesLearned[i + 1]}
+          updatedRunesLearned={updatedRunesLearned}
         />
       ))}
     </div>
