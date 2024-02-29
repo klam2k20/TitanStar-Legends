@@ -22,7 +22,7 @@ const TalentPath = ({ id }) => {
         <Rune
           key={i}
           id={i}
-          icon={isLearned ? path[i][0] : path[i][1]}
+          icon={path[i]}
           isLearned={isLearned}
           isPrevRuneLearned={!i ? true : runesLearned[i - 1]}
           isNextRuneLearned={i === runesLearned.length - 1 ? false : runesLearned[i + 1]}

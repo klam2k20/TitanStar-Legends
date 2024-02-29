@@ -43,7 +43,8 @@ const Rune = ({
 
   return (
     <div className='rune-wrapper' onClick={handleClick} onContextMenu={handleRighClick}>
-      <img alt='' src={icon} />;
+      <img alt='' src={icon} />
+      {!isLearned && <div class='rune-overlay' />}
     </div>
   );
 };
