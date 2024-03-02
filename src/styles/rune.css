@@ -1,21 +1,44 @@
 .rune-wrapper {
   position: relative;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 4px;
   cursor: grab;
+  background-image: linear-gradient(gray 0%, lightgray 50%, gray 100%);
+
+  img {
+    z-index: 5;
+  }
 }
 
+/* Control the rune's dimming effect */
 .rune-overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  opacity: 0.5;
+  z-index: 10;
+  background-color: rgb(0, 0, 0);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .rune-overlay:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0.25;
+}
+
+.rune-wrapper.learned .rune-overlay {
+  opacity: 0;
+}
+
+/* Control the rune's outline color */
+.rune-outline {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image: linear-gradient(rgb(0, 77, 152) 0%, lightgray 50%, rgb(0, 77, 152) 100%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.rune-wrapper.learned .rune-outline {
+  opacity: 1;
 }

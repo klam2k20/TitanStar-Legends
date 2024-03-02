@@ -42,9 +42,13 @@ const Rune = ({
   };
 
   return (
-    <div className='rune-wrapper' onClick={handleClick} onContextMenu={handleRighClick}>
+    <div
+      className={`rune-wrapper ${isLearned ? 'learned' : ''}`}
+      onClick={handleClick}
+      onContextMenu={handleRighClick}>
       <img alt='' src={icon} />
-      {!isLearned && <div class='rune-overlay' />}
+      <div className='rune-overlay' />
+      <div className='rune-outline' />
     </div>
   );
 };
