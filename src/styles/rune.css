@@ -19,7 +19,7 @@
   opacity: 0.5;
   z-index: 10;
   background-color: rgb(0, 0, 0);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .rune-overlay:hover {
@@ -36,7 +36,7 @@
   inset: 0;
   opacity: 0;
   background-image: linear-gradient(rgb(0, 77, 152) 0%, lightgray 50%, rgb(0, 77, 152) 100%);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .rune-wrapper.learned .rune-outline {
