@@ -31,7 +31,11 @@ const TalentPath = ({ id }) => {
             updatedRunesLearned={updatedRunesLearned}
           />
           {i < runesLearned.length - 1 && (
-            <Path isPrevRuneLearned={runesLearned[i]} isNextRuneLearned={runesLearned[i + 1]} />
+            <Path
+              key={i}
+              isPrevRuneLearned={runesLearned[i]}
+              isNextRuneLearned={runesLearned[i + 1]}
+            />
           )}
         </>
       ))}
