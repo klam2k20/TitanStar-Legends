@@ -16,10 +16,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.warning {
-  border-color: var(--toast-warning);
-}
-
 .error {
   border-color: var(--toast-error);
 }
