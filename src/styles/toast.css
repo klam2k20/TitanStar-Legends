@@ -1,0 +1,22 @@
+@import url('variables.css');
+
+.toast-wrapper {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  width: 16rem;
+  height: 4rem;
+  border: 1px solid darkred;
+  padding: 1rem 1.5rem;
+  background-color: var(--text-overlay);
+  font-size: 1rem;
+  transform: translateY(3rem);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.visible {
+  transform: translateY(0rem);
+  opacity: 1;
+}

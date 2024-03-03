@@ -34,7 +34,8 @@ const TalentPath = ({ id }) => {
           <React.Fragment key={`talent-path-rune-${id}-${i}`}>
             <Rune
               key={`rune-${id}-${i}`}
-              id={id === 1 ? i : i + 4}
+              id={i}
+              path={id}
               icon={path[i]}
               isLearned={isLearned}
               isPrevRuneLearned={!i ? true : runesLearned[i - 1]}

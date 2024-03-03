@@ -3,6 +3,7 @@ import '../styles/App.css';
 import '../styles/utilities.css';
 import PointDisplay from './PointDisplay';
 import TalentPath from './TalentPath';
+import Toast from './Toast';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </div>
         <PointDisplay />
       </div>
+      {/* <Toast /> */}
     </main>
   );
 }

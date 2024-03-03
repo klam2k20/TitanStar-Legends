@@ -3,10 +3,12 @@ import React from 'react';
 import { useAvailablePoints } from '../hooks/useAvailablePoints';
 import '../styles/rune.css';
 import '../styles/utilities.css';
+import { useToast } from '../hooks/useToast';
 
 /**
  * A single rune that can be learned
  * @param id the rune's id
+ * @param path the talent path the rune is in
  * @param icon the rune's icon image
  * @param isLearned whether the rune has been learned
  * @param isPrevRuneLearned whether the previous rune has been learned
@@ -15,6 +17,7 @@ import '../styles/utilities.css';
  */
 const Rune = ({
   id,
+  path,
   icon,
   isLearned,
   isPrevRuneLearned,
@@ -22,6 +25,7 @@ const Rune = ({
   updatedRunesLearned,
 }) => {
   const { availablePoints, addPoint, removePoint } = useAvailablePoints();
+  const { showToast } = useToast();
 
   /**
    * Handles left clicks to learn a rune
@@ -56,7 +60,7 @@ const Rune = ({
       className={`flex-row rune-wrapper ${isLearned ? 'learned' : ''}`}
       onClick={handleClick}
       onContextMenu={handleRighClick}>
-      <img alt={`Rune ${id}`} src={icon} />
+      <img alt={`Talent Path ${path} Rune ${id} `} src={icon} />
       <div className='rune-overlay' />
       <div className='rune-outline' />
     </div>
