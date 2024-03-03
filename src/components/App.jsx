@@ -7,7 +7,7 @@ import Toast from './Toast';
 
 function App() {
   return (
-    <main className='flex-column app'>
+    <main className='flex-column app' onContextMenu={(e) => e.preventDefault()}>
       <h1 className='title'>
         TitanStar Legends <span>Rune Mastery</span>
       </h1>
