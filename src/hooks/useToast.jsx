@@ -11,6 +11,11 @@ const ToastProvider = ({ children }) => {
   const [visible, setVisible] = useState(false);
   const [timeoutId, setTimeoutId] = useState();
 
+  /**
+   * Update the toast with the new message and type
+   * @param msg updated toast content
+   * @param type updated toast type
+   */
   const showToast = (msg, type = 1) => {
     if (timeoutId) clearTimeout(timeoutId);
     setIsSuccess(type);
@@ -19,6 +24,9 @@ const ToastProvider = ({ children }) => {
     setTimeoutId(setTimeout(hideToast, 5000));
   };
 
+  /**
+   * Remove the current toast
+   */
   const hideToast = () => {
     if (timeoutId) clearTimeout(timeoutId);
     setIsSuccess(1);

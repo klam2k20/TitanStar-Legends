@@ -9,7 +9,14 @@ const AvailablePointsContext = createContext();
 const AvailablePointsProvider = ({ children }) => {
   const [availablePoints, setAvailablePoints] = useState(MAX_AVAILABLE_POINTS);
 
+  /**
+   * Increment available points
+   */
   const addPoint = () => setAvailablePoints((prev) => prev + 1);
+
+  /**
+   * Decrement available points
+   */
   const removePoint = () => setAvailablePoints((prev) => prev - 1);
 
   return (
