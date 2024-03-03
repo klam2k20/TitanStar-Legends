@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/path.css';
 
+/**
+ * A path connecting two runes
+ * @param isPrevRuneLearned whether the rune to the left of the path has been learned
+ * @param isNextRuneLearned whether the rune to the right of the path has been learned
+ */
 const Path = ({ isPrevRuneLearned, isNextRuneLearned }) => {
   const className =
     isPrevRuneLearned && isNextRuneLearned

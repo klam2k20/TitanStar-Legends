@@ -4,6 +4,15 @@ import '../styles/rune.css';
 import '../styles/utilities.css';
 import { useAvailablePoints } from '../hooks/useAvailablePoints';
 
+/**
+ * A single rune that can be learned
+ * @param id the rune's id
+ * @param icon the rune's icon image
+ * @param isLearned whether the rune has been learned
+ * @param isPrevRuneLearned whether the previous rune has been learned
+ * @param isNextRuneLearned whether the next rune has been learned
+ * @param updatedRunesLearned a function to update the rune's learned state in TalentPath
+ */
 const Rune = ({
   id,
   icon,

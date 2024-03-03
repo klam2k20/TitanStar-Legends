@@ -5,10 +5,19 @@ import '../styles/talent-path.css';
 import Rune from './Rune';
 import Path from './Path';
 
+/**
+ * A talent path that contains a set of runes that can be learned in order
+ * @param id the talent path id
+ */
 const TalentPath = ({ id }) => {
   const [runesLearned, setRunesLearned] = useState([false, false, false, false]);
   const path = id === 1 ? TALENT_PATH_1 : TALENT_PATH_2;
 
+  /**
+   * Updates the learned state of a rune within runesLearned
+   * @param id the index of the rune to update
+   * @param isLearned the new learned state of the rune
+   */
   const updatedRunesLearned = (id, isLearned) => {
     setRunesLearned(() => {
       const updatedRunes = [...runesLearned];
