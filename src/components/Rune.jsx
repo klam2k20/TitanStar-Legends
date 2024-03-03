@@ -47,7 +47,7 @@ const Rune = ({
       className={`flex-row rune-wrapper ${isLearned ? 'learned' : ''}`}
       onClick={handleClick}
       onContextMenu={handleRighClick}>
-      <img alt='' src={icon} />
+      <img alt={`Rune ${id}`} src={icon} />
       <div className='rune-overlay' />
       <div className='rune-outline' />
     </div>
