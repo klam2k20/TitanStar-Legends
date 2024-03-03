@@ -7,8 +7,7 @@ function App() {
   return (
     <main>
       <h1 className='title'>
-        TitanStar Legends <br />
-        Rune Mastery
+        TitanStar Legends <span className='subtitle'>Rune Mastery</span>
       </h1>
       <div className='content'>
         <div className='talent-paths'>
