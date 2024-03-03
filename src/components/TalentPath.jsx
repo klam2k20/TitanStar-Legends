@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { TALENT_PATH_1, TALENT_PATH_2 } from '../constants/talentPaths';
 import '../styles/talent-path.css';
-import Rune from './Rune';
 import Path from './Path';
+import Rune from './Rune';
 
 /**
  * A talent path that contains a set of runes that can be learned in order

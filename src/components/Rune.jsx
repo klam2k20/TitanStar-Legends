@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { useAvailablePoints } from '../hooks/useAvailablePoints';
 import '../styles/rune.css';
 import '../styles/utilities.css';
-import { useAvailablePoints } from '../hooks/useAvailablePoints';
 
 /**
  * A single rune that can be learned

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/App.css';
 import '../styles/utilities.css';
-import TalentPath from './TalentPath';
 import PointDisplay from './PointDisplay';
+import TalentPath from './TalentPath';
 
 function App() {
   return (
