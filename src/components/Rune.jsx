@@ -40,7 +40,7 @@ const Rune = ({
       updatedRunesLearned(id, true);
       showToast('Rune Learned!');
     } else if (!availablePoints) showToast('Insufficient Points!', 0);
-    else if (!isPrevRuneLearned) showToast('Runes Must be Learned in Order!', 0);
+    else if (!isPrevRuneLearned) showToast('Runes Must be Mastered in Order!', 0);
     else showToast('Rune Already Learned!', 0);
   };
 
@@ -56,7 +56,7 @@ const Rune = ({
       addPoint();
       updatedRunesLearned(id, false);
       showToast('Rune Lost!');
-    } else if (isNextRuneLearned) showToast('Runes Must be Lost in Order!', 0);
+    } else if (isNextRuneLearned) showToast('Runes Must be Reset in Order!', 0);
     else showToast('Rune not Learned!', 0);
   };
 
