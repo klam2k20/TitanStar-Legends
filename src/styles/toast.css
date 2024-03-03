@@ -36,3 +36,11 @@
   color: var(--fg-color);
   cursor: grab;
 }
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+  .toast-wrapper {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
