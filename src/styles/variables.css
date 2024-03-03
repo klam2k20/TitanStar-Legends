@@ -7,4 +7,7 @@
   --rune-gradient-dark: #64748b;
   --rune-gradient-light: #f8fafc;
   --rune-border-gradient-dark: #004d98;
+  --toast-success: #4caf50;
+  --toast-warning: #ffc107;
+  --toast-error: #f44336;
 }

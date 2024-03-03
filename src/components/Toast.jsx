@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useToast } from '../hooks/useToast';
 import '../styles/toast.css';
 
 function Toast() {
-  const { message, visible, hideToast } = useToast();
+  const { isSuccess, message, visible, hideToast } = useToast();
 
   return (
-    <div className={visible ? 'toast-wrapper flex-row visible' : 'toast-wrapper flex-row'}>
+    <div
+      className={`toast-wrapper flex-row ${visible ? 'visible' : ''} ${!isSuccess ? 'error' : ''}`}>
       {message}
       <button className='close' onClick={hideToast}>
         X

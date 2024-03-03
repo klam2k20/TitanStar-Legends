@@ -6,28 +6,37 @@
   right: 3rem;
   width: 16rem;
   height: 4rem;
-  border: 1px solid darkred;
-  transform: translateY(3rem);
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-  background-color: var(--text-overlay);
+  border: 1px solid var(--toast-success);
+  border-radius: 0.5rem;
   padding: 1rem 1.5rem;
+  opacity: 0;
+  background-color: var(--text-overlay);
   font-size: 1rem;
+  transform: translateY(3rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.warning {
+  border-color: var(--toast-warning);
+}
+
+.error {
+  border-color: var(--toast-error);
 }
 
 .visible {
-  transform: translateY(0rem);
   opacity: 1;
+  transform: translateY(0rem);
 }
 
 .close {
-  background-color: transparent;
-  font-size: 1rem;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  padding: 4px 6px;
-  color: darkred;
   border: none;
+  padding: 4px 6px;
+  background-color: transparent;
+  font-size: 1rem;
+  color: var(--fg-color);
   cursor: grab;
 }
