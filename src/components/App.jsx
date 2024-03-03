@@ -6,7 +6,10 @@ import PointDisplay from './PointDisplay';
 function App() {
   return (
     <main>
-      <h1 className='title'>TitanStar Legends - Rune Mastery</h1>
+      <h1 className='title'>
+        TitanStar Legends <br />
+        Rune Mastery
+      </h1>
       <div className='content'>
         <div className='talent-paths'>
           <TalentPath id={1} />

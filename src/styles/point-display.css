@@ -8,7 +8,15 @@
   border-radius: 0.5rem;
 }
 
-.point-display span,
-h2 {
+.point-display h2,
+.point-display span {
   font-size: 1.25rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .point-display h2,
+  .point-display span {
+    font-size: 1rem;
+  }
 }
