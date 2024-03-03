@@ -19,26 +19,29 @@ const TalentPath = ({ id }) => {
 
   return (
     <div className='talent-path-wrapper'>
-      {runesLearned.map((isLearned, i) => (
-        <>
-          <Rune
-            key={i}
-            id={i}
-            icon={path[i]}
-            isLearned={isLearned}
-            isPrevRuneLearned={!i ? true : runesLearned[i - 1]}
-            isNextRuneLearned={i === runesLearned.length - 1 ? false : runesLearned[i + 1]}
-            updatedRunesLearned={updatedRunesLearned}
-          />
-          {i < runesLearned.length - 1 && (
-            <Path
-              key={i}
-              isPrevRuneLearned={runesLearned[i]}
-              isNextRuneLearned={runesLearned[i + 1]}
+      <h2 className='talent-path-label'>{`Talent Path ${id}`}</h2>
+      <div className='talent-path'>
+        {runesLearned.map((isLearned, i) => (
+          <>
+            <Rune
+              key={`talent-path-rune-${id}-${i}`}
+              id={i}
+              icon={path[i]}
+              isLearned={isLearned}
+              isPrevRuneLearned={!i ? true : runesLearned[i - 1]}
+              isNextRuneLearned={i === runesLearned.length - 1 ? false : runesLearned[i + 1]}
+              updatedRunesLearned={updatedRunesLearned}
             />
-          )}
-        </>
-      ))}
+            {i < runesLearned.length - 1 && (
+              <Path
+                key={`talent-path-path-${id}-${i}`}
+                isPrevRuneLearned={runesLearned[i]}
+                isNextRuneLearned={runesLearned[i + 1]}
+              />
+            )}
+          </>
+        ))}
+      </div>
     </div>
   );
 };

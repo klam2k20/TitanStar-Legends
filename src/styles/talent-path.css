@@ -1,5 +1,15 @@
 .talent-path-wrapper {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap-reverse;
+  gap: 2rem;
+}
+
+.talent-path-label {
+  font-size: 1.25rem;
+}
+
+.talent-path {
+  display: flex;
+  align-items: center;
 }
