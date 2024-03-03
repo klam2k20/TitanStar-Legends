@@ -1,0 +1,10 @@
+:root {
+  --font-family: 'Cinzel', seif;
+  --black: #000000;
+  --bg-color: #020617;
+  --fg-color: #f8fafc;
+  --text-overlay: #0f172a;
+  --rune-gradient-dark: #64748b;
+  --rune-gradient-light: #f8fafc;
+  --rune-border-gradient-dark: #004d98;
+}

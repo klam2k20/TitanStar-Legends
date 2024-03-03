@@ -1,15 +1,18 @@
+@import url('variables.css');
+
 .rune-wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 4px;
+  background-image: linear-gradient(
+    var(--rune-gradient-dark) 0%,
+    var(--rune-gradient-light) 50%,
+    var(--rune-gradient-dark) 100%
+  );
   cursor: grab;
-  background-image: linear-gradient(#64748b 0%, #f8fafc 50%, #64748b 100%);
+}
 
-  img {
-    z-index: 5;
-  }
+.rune-wrapper img {
+  z-index: 5;
 }
 
 /* Control the rune's dimming effect */
@@ -18,7 +21,7 @@
   inset: 0;
   opacity: 0.5;
   z-index: 10;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--black);
   transition: opacity 0.25s ease-in-out;
 }
 
@@ -35,7 +38,11 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  background-image: linear-gradient(rgb(0, 77, 152) 0%, lightgray 50%, rgb(0, 77, 152) 100%);
+  background-image: linear-gradient(
+    var(--rune-border-gradient-dark) 0%,
+    var(--rune-gradient-light) 50%,
+    var(--rune-border-gradient-dark) 100%
+  );
   transition: opacity 0.25s ease-in-out;
 }
 

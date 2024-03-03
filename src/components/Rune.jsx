@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/rune.css';
+import '../styles/utilities.css';
 import { useAvailablePoints } from '../hooks/useAvailablePoints';
 
 const Rune = ({
@@ -43,7 +44,7 @@ const Rune = ({
 
   return (
     <div
-      className={`rune-wrapper ${isLearned ? 'learned' : ''}`}
+      className={`flex-row rune-wrapper ${isLearned ? 'learned' : ''}`}
       onClick={handleClick}
       onContextMenu={handleRighClick}>
       <img alt='' src={icon} />
