@@ -18,7 +18,7 @@ function App() {
         </div>
         <PointDisplay />
       </div>
-      {/* <Toast /> */}
+      <Toast />
     </main>
   );
 }
