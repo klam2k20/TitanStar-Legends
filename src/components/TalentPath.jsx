@@ -22,9 +22,9 @@ const TalentPath = ({ id }) => {
       <h2 className='talent-path-label'>{`Talent Path ${id}`}</h2>
       <div className='talent-path'>
         {runesLearned.map((isLearned, i) => (
-          <>
+          <React.Fragment key={`talent-path-rune-${id}-${i}`}>
             <Rune
-              key={`talent-path-rune-${id}-${i}`}
+              key={`rune-${id}-${i}`}
               id={i}
               icon={path[i]}
               isLearned={isLearned}
@@ -34,12 +34,12 @@ const TalentPath = ({ id }) => {
             />
             {i < runesLearned.length - 1 && (
               <Path
-                key={`talent-path-path-${id}-${i}`}
+                key={`path-${id}-${i}`}
                 isPrevRuneLearned={runesLearned[i]}
                 isNextRuneLearned={runesLearned[i + 1]}
               />
             )}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
