@@ -3,6 +3,9 @@ import React, { useState, createContext, useContext } from 'react';
 const MAX_AVAILABLE_POINTS = 6;
 const AvailablePointsContext = createContext();
 
+/**
+ * Keep track of available points
+ */
 const AvailablePointsProvider = ({ children }) => {
   const [availablePoints, setAvailablePoints] = useState(MAX_AVAILABLE_POINTS);
 

@@ -2,6 +2,9 @@ import React from 'react';
 import { useToast } from '../hooks/useToast';
 import '../styles/toast.css';
 
+/**
+ * A toast notification
+ */
 function Toast() {
   const { isSuccess, message, visible, hideToast } = useToast();
 

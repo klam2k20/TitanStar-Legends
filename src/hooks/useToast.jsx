@@ -2,6 +2,9 @@ import React, { useState, createContext, useContext } from 'react';
 
 const ToastContext = createContext();
 
+/**
+ * Keep track of toast info
+ */
 const ToastProvider = ({ children }) => {
   const [isSuccess, setIsSuccess] = useState(1);
   const [message, setMessage] = useState('');
