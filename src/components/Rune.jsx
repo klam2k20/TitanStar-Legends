@@ -55,12 +55,12 @@ const Rune = ({
 };
 
 Rune.propTypes = {
-  id: PropTypes.number,
-  icon: PropTypes.string,
-  isLearned: PropTypes.bool,
-  isPrevRuneLearned: PropTypes.bool,
-  isNextRuneLearned: PropTypes.bool,
-  updatedRunesLearned: PropTypes.func,
+  id: PropTypes.number.isRequired,
+  icon: PropTypes.string.isRequired,
+  isLearned: PropTypes.bool.isRequired,
+  isPrevRuneLearned: PropTypes.bool.isRequired,
+  isNextRuneLearned: PropTypes.bool.isRequired,
+  updatedRunesLearned: PropTypes.func.isRequired,
 };
 
 export default Rune;

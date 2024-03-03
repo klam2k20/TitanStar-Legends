@@ -17,8 +17,8 @@ const Path = ({ isPrevRuneLearned, isNextRuneLearned }) => {
 };
 
 Path.propTypes = {
-  isPrevRuneLearned: PropTypes.bool,
-  isNextRuneLearned: PropTypes.bool,
+  isPrevRuneLearned: PropTypes.bool.isRequired,
+  isNextRuneLearned: PropTypes.bool.isRequired,
 };
 
 export default Path;

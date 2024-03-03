@@ -9,10 +9,10 @@ const TalentPath = ({ id }) => {
   const [runesLearned, setRunesLearned] = useState([false, false, false, false]);
   const path = id === 1 ? TALENT_PATH_1 : TALENT_PATH_2;
 
-  const updatedRunesLearned = (idx, isLearned) => {
+  const updatedRunesLearned = (id, isLearned) => {
     setRunesLearned(() => {
       const updatedRunes = [...runesLearned];
-      updatedRunes[idx] = isLearned;
+      updatedRunes[id] = isLearned;
       return updatedRunes;
     });
   };
@@ -47,7 +47,7 @@ const TalentPath = ({ id }) => {
 };
 
 TalentPath.propTypes = {
-  idx: PropTypes.number,
+  id: PropTypes.number.isRequired,
 };
 
 export default TalentPath;
