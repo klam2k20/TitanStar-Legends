@@ -1,0 +1,11 @@
+.point-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.point-display span,
+h2 {
+  font-size: 1.25rem;
+}
