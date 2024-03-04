@@ -12,7 +12,7 @@
   opacity: 0;
   background-color: var(--text-overlay);
   font-size: 1rem;
-  transform: translateY(3rem);
+  transform: translateY(2rem);
   transition: all 0.3s ease-in-out;
 }
 
