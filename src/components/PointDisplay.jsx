@@ -7,7 +7,7 @@ function PointDisplay() {
   const { availablePoints } = useAvailablePoints();
 
   return (
-    <div className='flex-column point-display'>
+    <div className='flex-column point-display' data-testid='points-spent'>
       <span>
         {MAX_AVAILABLE_POINTS - availablePoints} / {MAX_AVAILABLE_POINTS}
       </span>
