@@ -64,6 +64,7 @@ const Rune = ({
   const handleInitialTouch = (e) => {
     touchStart.current = Date.now();
     e.preventDefault();
+    e.stopPropagation();
   };
 
   const handleTouch = () => {
