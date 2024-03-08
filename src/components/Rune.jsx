@@ -26,33 +26,12 @@ const Rune = ({
 }) => {
   const { availablePoints, addPoint, removePoint } = useAvailablePoints();
   const { showToast } = useToast();
-  const touchStart = useRef(null);
+  const isTouch = useRef(null);
 
   /**
-   * Handles left clicks to learn a rune
-   * A rune can be learned if it hasn't yet been learned,
-   * all the previous runes before it within the talent
-   * path have been learned, and there is at least one
-   * available point
+   * Handles resetting a rune
    */
-  const handleClick = () => {
-    if (!isLearned && isPrevRuneLearned && availablePoints) {
-      removePoint();
-      updatedRunesLearned(id, true);
-      showToast('Rune Mastered!');
-    } else if (!availablePoints) showToast('Insufficient Points!', 0);
-    else if (!isPrevRuneLearned) showToast('Runes Must be Mastered in Order!', 0);
-    else showToast('Rune Already Mastered!', 0);
-  };
-
-  /**
-   * Handles right clicks to unlearn a rune
-   * A rune can be unlearned if its been learned and
-   * none of the runes ahead of it are learned
-   *
-   */
-  const handleRighClick = (e) => {
-    e.preventDefault();
+  const resetRune = () => {
     if (isLearned && !isNextRuneLearned) {
       addPoint();
       updatedRunesLearned(id, false);
@@ -61,23 +40,49 @@ const Rune = ({
     else showToast('Rune not Mastered!', 0);
   };
 
-  const handleInitialTouch = (e) => {
-    touchStart.current = Date.now();
-    e.preventDefault();
-    e.stopPropagation();
+  /**
+   * Handles the following scenarios:
+   * Left clicks to learn a rune on non-touch screen devices
+   * A rune can be learned if it hasn't yet been learned,
+   * all the previous runes before it within the talent
+   * path have been learned, and there is at least one
+   * available point
+   *
+   * Touches to reset a rune on touch screen devices
+   */
+  const handleClick = () => {
+    if (!isLearned && isPrevRuneLearned && availablePoints) {
+      removePoint();
+      updatedRunesLearned(id, true);
+      showToast('Rune Mastered!');
+    } else if (isTouch.current && isLearned) resetRune();
+    else if (!availablePoints) showToast('Insufficient Points!', 0);
+    else if (!isPrevRuneLearned) showToast('Runes Must be Mastered in Order!', 0);
+    else showToast('Rune Already Mastered!', 0);
   };
 
-  const handleTouch = () => {
-    const elapsedTime = Date.now() - touchStart.current;
-    if (elapsedTime < 1000) handleClick();
-    else handleRighClick();
+  /**
+   * Handles right clicks to reset a rune
+   * A rune can be reset if its been learned and
+   * none of the runes ahead of it are learned
+   *
+   */
+  const handleRighClick = (e) => {
+    e.preventDefault();
+    resetRune();
+  };
+
+  /**
+   * Sets the rune's initial time when touched
+   */
+  const handleInitialTouch = (e) => {
+    isTouch.current = true;
   };
 
   return (
     <div
       className={`flex-row rune-wrapper ${isLearned ? 'learned' : ''}`}
       onTouchStart={handleInitialTouch}
-      onTouchEnd={handleTouch}
       onClick={handleClick}
       onContextMenu={handleRighClick}
       data-testid={`${path}-${id}`}>
