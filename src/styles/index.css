@@ -12,4 +12,5 @@ body {
   background-color: var(--bg-color);
   color: var(--fg-color);
   font-family: var(--font-family);
+  user-select: none;
 }
