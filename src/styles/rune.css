@@ -9,6 +9,7 @@
     var(--rune-gradient-dark) 100%
   );
   cursor: grab;
+  user-select: none;
 }
 
 .rune-wrapper img {

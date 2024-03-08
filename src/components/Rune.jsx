@@ -26,7 +26,6 @@ const Rune = ({
 }) => {
   const { availablePoints, addPoint, removePoint } = useAvailablePoints();
   const { showToast } = useToast();
-  const touchStart = useRef(null);
 
   /**
    * Handles left clicks to learn a rune
@@ -61,22 +60,9 @@ const Rune = ({
     else showToast('Rune not Mastered!', 0);
   };
 
-  const handleInitialTouch = (e) => {
-    e.preventDefault();
-    touchStart.current = Date.now();
-  };
-
-  const handleTouch = () => {
-    const elapsedTime = Date.now() - touchStart.current;
-    if (elapsedTime < 1000) handleClick();
-    else handleRighClick();
-  };
-
   return (
     <div
       className={`flex-row rune-wrapper ${isLearned ? 'learned' : ''}`}
-      onTouchStart={handleInitialTouch}
-      onTouchEnd={handleTouch}
       onClick={handleClick}
       onContextMenu={handleRighClick}
       data-testid={`${path}-${id}`}>
