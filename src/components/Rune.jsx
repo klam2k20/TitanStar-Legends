@@ -61,7 +61,8 @@ const Rune = ({
     else showToast('Rune not Mastered!', 0);
   };
 
-  const handleInitialTouch = () => {
+  const handleInitialTouch = (e) => {
+    e.preventDefault();
     touchStart.current = Date.now();
   };
 
