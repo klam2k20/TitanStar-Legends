@@ -44,3 +44,11 @@
     right: 2rem;
   }
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 640px) {
+  .toast-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
