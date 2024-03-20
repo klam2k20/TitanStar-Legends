@@ -13,25 +13,33 @@ TitanStar Legends is a responsive React application designed to allow players to
 
 ## Features
 
-- Learn Runes
+<details>
+<summary>Learn Runes</summary>
 <p align="center">
-    <img src="public/learn-runes.gif" height="500">
+    <img src="public/learn-runes.gif" height="50%">
 </p>
+</details>
 
-- Reset Runes
+<details>
+<summary>Reset Runes</summary>
 <p align="center">
-    <img src="public/reset-runes.gif" height="500">
+    <img src="public/reset-runes.gif" height="50%">
 </p>
+</details>
 
-- Toast Notifications
+<details>
+<summary>Toast Notifications</summary>
 <p align="center">
-    <img src="public/toasts.gif" height="500">
+    <img src="public/toasts.gif" height="50%">
 </p>
+</details>
 
-- Responsive Design
+<details>
+<summary>Responsive Design</summary>
 <p align="center">
-    <img src="public/responsive-design.gif" height="500">
+    <img src="public/responsive-design.gif" height="50%">
 </p>
+</details>
 
 ## Getting Started
 
